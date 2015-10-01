@@ -64,62 +64,61 @@
     <Reference Include="Castle.Windsor">
       <HintPath>..\packages\Castle.Windsor.3.2.0\lib\net45\Castle.Windsor.dll</HintPath>
     </Reference>
-    <Reference Include="EPiServer">
-      <HintPath>..\packages\EPiServer.CMS.Core.8.0.0-pre-000734\lib\net45\EPiServer.dll</HintPath>
+    <Reference Include="EPiServer, Version=9.0.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EPiServer.CMS.Core.9.0.0\lib\net45\EPiServer.dll</HintPath>
     </Reference>
-    <Reference Include="EPiServer.ApplicationModules">
-      <HintPath>..\packages\EPiServer.Framework.8.0.0-pre-000734\lib\net45\EPiServer.ApplicationModules.dll</HintPath>
+    <Reference Include="EPiServer.ApplicationModules, Version=9.0.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EPiServer.Framework.9.0.0\lib\net45\EPiServer.ApplicationModules.dll</HintPath>
     </Reference>
-    <Reference Include="EPiServer.BaseLibrary">
-      <HintPath>..\packages\EPiServer.CMS.Core.8.0.0-pre-000734\lib\net45\EPiServer.BaseLibrary.dll</HintPath>
+    <Reference Include="EPiServer.Configuration, Version=9.0.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EPiServer.CMS.Core.9.0.0\lib\net45\EPiServer.Configuration.dll</HintPath>
     </Reference>
-    <Reference Include="EPiServer.Configuration">
-      <HintPath>..\packages\EPiServer.CMS.Core.8.0.0-pre-000734\lib\net45\EPiServer.Configuration.dll</HintPath>
+    <Reference Include="EPiServer.Data, Version=9.0.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EPiServer.Framework.9.0.0\lib\net45\EPiServer.Data.dll</HintPath>
     </Reference>
-    <Reference Include="EPiServer.Data">
-      <HintPath>..\packages\EPiServer.Framework.8.0.0-pre-000734\lib\net45\EPiServer.Data.dll</HintPath>
+    <Reference Include="EPiServer.Data.Cache, Version=9.0.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EPiServer.Framework.9.0.0\lib\net45\EPiServer.Data.Cache.dll</HintPath>
     </Reference>
-    <Reference Include="EPiServer.Data.Cache">
-      <HintPath>..\packages\EPiServer.Framework.8.0.0-pre-000734\lib\net45\EPiServer.Data.Cache.dll</HintPath>
+    <Reference Include="EPiServer.Enterprise, Version=9.0.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EPiServer.CMS.Core.9.0.0\lib\net45\EPiServer.Enterprise.dll</HintPath>
     </Reference>
-    <Reference Include="EPiServer.Enterprise">
-      <HintPath>..\packages\EPiServer.CMS.Core.8.0.0-pre-000734\lib\net45\EPiServer.Enterprise.dll</HintPath>
+    <Reference Include="EPiServer.Events, Version=9.0.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EPiServer.Framework.9.0.0\lib\net45\EPiServer.Events.dll</HintPath>
     </Reference>
-    <Reference Include="EPiServer.Events">
-      <HintPath>..\packages\EPiServer.Framework.8.0.0-pre-000734\lib\net45\EPiServer.Events.dll</HintPath>
+    <Reference Include="EPiServer.Framework, Version=9.0.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EPiServer.Framework.9.0.0\lib\net45\EPiServer.Framework.dll</HintPath>
     </Reference>
-    <Reference Include="EPiServer.Framework">
-      <HintPath>..\packages\EPiServer.Framework.8.0.0-pre-000734\lib\net45\EPiServer.Framework.dll</HintPath>
+    <Reference Include="EPiServer.ImageLibrary, Version=9.0.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EPiServer.CMS.Core.9.0.0\lib\net45\EPiServer.ImageLibrary.dll</HintPath>
     </Reference>
-    <Reference Include="EPiServer.ImageLibrary">
-      <HintPath>..\packages\EPiServer.CMS.Core.8.0.0-pre-000734\lib\net45\EPiServer.ImageLibrary.dll</HintPath>
+    <Reference Include="EPiServer.Licensing, Version=9.0.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EPiServer.Framework.9.0.0\lib\net45\EPiServer.Licensing.dll</HintPath>
     </Reference>
-    <Reference Include="EPiServer.Implementation">
-      <HintPath>..\packages\EPiServer.CMS.Core.8.0.0-pre-000734\lib\net45\EPiServer.Implementation.dll</HintPath>
+    <Reference Include="EPiServer.LinkAnalyzer, Version=9.0.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EPiServer.CMS.Core.9.0.0\lib\net45\EPiServer.LinkAnalyzer.dll</HintPath>
     </Reference>
-    <Reference Include="EPiServer.Licensing">
-      <HintPath>..\packages\EPiServer.Framework.8.0.0-pre-000734\lib\net45\EPiServer.Licensing.dll</HintPath>
+    <Reference Include="EPiServer.Shell, Version=9.0.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EPiServer.Framework.9.0.0\lib\net45\EPiServer.Shell.dll</HintPath>
     </Reference>
-    <Reference Include="EPiServer.LinkAnalyzer">
-      <HintPath>..\packages\EPiServer.CMS.Core.8.0.0-pre-000734\lib\net45\EPiServer.LinkAnalyzer.dll</HintPath>
+    <Reference Include="EPiServer.Web.WebControls, Version=9.0.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EPiServer.CMS.Core.9.0.0\lib\net45\EPiServer.Web.WebControls.dll</HintPath>
     </Reference>
-    <Reference Include="EPiServer.Logging.Log4Net">
-      <HintPath>..\packages\EPiServer.Logging.Log4Net.0.1.0\lib\net45\EPiServer.Logging.Log4Net.dll</HintPath>
-    </Reference>
-    <Reference Include="EPiServer.Shell">
-      <HintPath>..\packages\EPiServer.Framework.8.0.0-pre-000734\lib\net45\EPiServer.Shell.dll</HintPath>
-    </Reference>
-    <Reference Include="EPiServer.Web.WebControls">
-      <HintPath>..\packages\EPiServer.CMS.Core.8.0.0-pre-000734\lib\net45\EPiServer.Web.WebControls.dll</HintPath>
-    </Reference>
-    <Reference Include="EPiServer.WorkflowFoundation">
-      <HintPath>..\packages\EPiServer.CMS.Core.8.0.0-pre-000734\lib\net45\EPiServer.WorkflowFoundation.dll</HintPath>
-    </Reference>
-    <Reference Include="EPiServer.XForms">
-      <HintPath>..\packages\EPiServer.CMS.Core.8.0.0-pre-000734\lib\net45\EPiServer.XForms.dll</HintPath>
-    </Reference>
-    <Reference Include="log4net">
-      <HintPath>..\packages\log4net.1.2.10\lib\2.0\log4net.dll</HintPath>
+    <Reference Include="EPiServer.XForms, Version=9.0.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EPiServer.CMS.Core.9.0.0\lib\net45\EPiServer.XForms.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
@@ -129,7 +128,13 @@
       <HintPath>..\packages\Newtonsoft.Json.5.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="StructureMap">
-      <HintPath>..\packages\structuremap.2.6.4.1\lib\net40\StructureMap.dll</HintPath>
+      <HintPath>..\packages\structuremap-signed.3.1.6.186\lib\net40\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap.Net4">
+      <HintPath>..\packages\structuremap-signed.3.1.6.186\lib\net40\StructureMap.Net4.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap.Web">
+      <HintPath>..\packages\structuremap.web-signed.3.1.6.186\lib\net40\StructureMap.Web.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />

@@ -17,7 +17,7 @@ namespace EPiServer.CdnSupport
     {
         private static Regex _validateUrl = new Regex("^/[a-z0-9]{6}/.+", RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.CultureInvariant);
         public static object CdnRequest = new object();
-        private static Lazy<string> _cdnUrl = new Lazy<string>(() => VirtualPathUtility.AppendTrailingSlash(ConfigurationManager.AppSettings["CdnUrl"]));
+        private static Lazy<string> _cdnUrl = new Lazy<string>(() => VirtualPathUtility.AppendTrailingSlash(ConfigurationManager.AppSettings["episerver:ExternalMediaUrl"]) ?? "/");
         private static string[] _mediaPaths = new string[] { "contentassets", RouteCollectionExtensions.SiteAssetStaticSegment, RouteCollectionExtensions.GlobalAssetStaticSegment };
 
         private static Injected<IContentLoader> Loader;
@@ -64,7 +64,7 @@ namespace EPiServer.CdnSupport
             IContent content;
             if (Loader.Service.TryGet(contentLink, out content) && ((ISecurable)content).GetSecurityDescriptor().HasAccess(PrincipalInfo.AnonymousPrincipal, AccessLevel.Read))
             {
-                e.UrlBuilder.Uri = new System.Uri(_cdnUrl + Unique(((IChangeTrackable)content).Saved) + "/" + e.UrlBuilder.Path);
+                e.UrlBuilder.Uri = new Uri(_cdnUrl + Unique(((IChangeTrackable)content).Saved) + "/" + e.UrlBuilder.Path, UriKind.RelativeOrAbsolute);
             }
         }
 
