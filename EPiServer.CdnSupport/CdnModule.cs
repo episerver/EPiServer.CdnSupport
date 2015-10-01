@@ -17,7 +17,7 @@ namespace EPiServer.CdnSupport
     {
         private static Regex _validateUrl = new Regex("^/[a-z0-9]{6}/.+", RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.CultureInvariant);
         public static object CdnRequest = new object();
-        private static Lazy<string> _cdnUrl = new Lazy<string>(() => VirtualPathUtility.AppendTrailingSlash(ConfigurationManager.AppSettings["episerver:ExternalMediaUrl"]) ?? "/");
+        private static Lazy<string> _cdnUrl = new Lazy<string>(() => VirtualPathUtility.AppendTrailingSlash(ConfigurationManager.AppSettings["episerver:CdnExternalMediaUrl"]) ?? "/");
         private static string[] _mediaPaths = new string[] { "contentassets", RouteCollectionExtensions.SiteAssetStaticSegment, RouteCollectionExtensions.GlobalAssetStaticSegment };
 
         private static Injected<IContentLoader> Loader;

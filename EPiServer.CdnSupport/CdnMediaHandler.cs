@@ -5,6 +5,7 @@ using EPiServer.ServiceLocation;
 using EPiServer.Web;
 using EPiServer.Web.Routing;
 using System;
+using System.Configuration;
 using System.Web;
 
 namespace EPiServer.CdnSupport
@@ -12,6 +13,8 @@ namespace EPiServer.CdnSupport
     [TemplateDescriptor(Inherited = true, TemplateTypeCategory = TemplateTypeCategories.HttpHandler, Default = true)]
     public class CdnMediaHandler : ContentMediaHttpHandler, IRenderTemplate<IContentMedia>
     {
+        private static Lazy<TimeSpan> _cdnExpiration = new Lazy<TimeSpan>(() => TimeSpan.Parse(ConfigurationManager.AppSettings["episerver:CdnExpirationTime"] as string ?? "365.00:00:00"));
+
         protected override void SetCachePolicy(System.Web.HttpContextBase context, DateTime fileChangedDate)
         {
             if (!IsRequestComingFromCdn(context))
@@ -34,7 +37,7 @@ namespace EPiServer.CdnSupport
             context.Response.Cache.SetCacheability(HttpCacheability.Public);
             context.Response.Cache.SetLastModified(fileChangedDate);
 
-            context.Response.Cache.SetExpires(DateTime.UtcNow.AddYears(1));
+            context.Response.Cache.SetExpires(DateTime.UtcNow + _cdnExpiration.Value);
             context.Response.Cache.SetValidUntilExpires(true);
             context.Response.Cache.VaryByParams.IgnoreParams = true;
             context.Response.Cache.SetOmitVaryStar(true);

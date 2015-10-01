@@ -6,13 +6,29 @@ Example: Media URL /globalassets/alloy-track/alloytrack.png will be rewritten to
 the injected key is short form of the saved/published date ensuring the URL changes when the media changes. Requests where the injected
 key is outdated will be permanently redirected to an updated key for SEO reasons and to make sure bookmarks continue to work.
 
-OPTIONAL: If URLs to media should be rewritten to point to an external CDN use this configuration, do not use in
-combination with site specific assets in a multi site setup since multiple CDN hosts are required.
+Supports CMS 9+.
+
+OPTIONAL: 
+
+*Custom expiration*
+
+The default expiration of 1 year is designed to optimize the length media stays in browser caches and that does not mean
+the content have to stay in a CDN for a year, see CDN documentation on which rules apply. To set a custom expiration add 
+the following configuration. In the example below the expiration is set to 7 days.
 
 ```xml
   <appSettings>
-    <add key="episerver:ExternalMediaUrl" value="http://static.site.com/"/>
+    <add key="episerver:CdnExpirationTime" value="7.0:0:0" />  
   </appSettings>
 ```
 
- Supports CMS 9.
+*External URL*
+
+If URLs to media should be rewritten to point to an external CDN use this configuration, do not use in
+combination with site specific assets in a multi site setup since multiple CDN hosts would have been required.
+
+```xml
+  <appSettings>
+    <add key="episerver:CdnExternalMediaUrl" value="http://static.site.com/"/>
+  </appSettings>
+```
