@@ -48,7 +48,7 @@ namespace EPiServer.CdnSupport
             string newPath = c.Request.Path.Substring(8);
             if (_mediaPaths.Any(p => newPath.StartsWith(p)))
             {
-                c.Items[CdnRequest] = true;
+                c.Items[CdnRequest] = c.Request.Path.Substring(1, 6);
                 c.RewritePath("/" + newPath, String.Empty, String.Empty, true);
             }
         }
@@ -64,12 +64,13 @@ namespace EPiServer.CdnSupport
             IContent content;
             if (Loader.Service.TryGet(contentLink, out content) && ((ISecurable)content).GetSecurityDescriptor().HasAccess(PrincipalInfo.AnonymousPrincipal, AccessLevel.Read))
             {
-                e.UrlBuilder.Uri = new Uri(_cdnUrl + Unique(((IChangeTrackable)content).Saved) + "/" + e.UrlBuilder.Path, UriKind.RelativeOrAbsolute);
+                e.UrlBuilder.Uri = new Uri(_cdnUrl + Unique(content) + "/" + e.UrlBuilder.Path, UriKind.RelativeOrAbsolute);
             }
         }
 
-        private static string Unique(DateTime d)
+        public static string Unique(IContent content)
         {
+            var d = ((IChangeTrackable)content).Saved;
             int hash = 17;
             unchecked
             {

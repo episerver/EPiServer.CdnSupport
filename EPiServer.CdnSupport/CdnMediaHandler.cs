@@ -1,7 +1,9 @@
 ﻿using EPiServer.Core;
 using EPiServer.Framework.DataAnnotations;
 using EPiServer.Framework.Web;
+using EPiServer.ServiceLocation;
 using EPiServer.Web;
+using EPiServer.Web.Routing;
 using System;
 using System.Web;
 
@@ -18,6 +20,17 @@ namespace EPiServer.CdnSupport
                 return;
             }
 
+            var helper = ServiceLocator.Current.GetInstance<ContentRouteHelper>();
+            if(helper.Content !=null)
+            {
+                var cdnString = (string)context.Items[CdnModule.CdnRequest];
+                var expectedString = CdnModule.Unique(helper.Content);
+                if(!String.Equals(cdnString, expectedString, StringComparison.OrdinalIgnoreCase))
+                {
+                    context.Response.RedirectPermanent("/" + expectedString + context.Request.Url.PathAndQuery);
+                }
+            }
+
             context.Response.Cache.SetCacheability(HttpCacheability.Public);
             context.Response.Cache.SetLastModified(fileChangedDate);
 
@@ -30,7 +43,7 @@ namespace EPiServer.CdnSupport
 
         public static bool IsRequestComingFromCdn(HttpContextBase ctx)
         {
-            return !ctx.Request.IsAuthenticated && ctx.Items[CdnModule.CdnRequest] != null && (bool)ctx.Items[CdnModule.CdnRequest];
+            return !ctx.Request.IsAuthenticated && ctx.Items[CdnModule.CdnRequest] != null;
         }
     }
 }
