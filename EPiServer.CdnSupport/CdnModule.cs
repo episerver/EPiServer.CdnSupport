@@ -31,7 +31,7 @@ namespace EPiServer.CdnSupport
         public void Initialize(Framework.Initialization.InitializationEngine context)
         {
             if (String.IsNullOrEmpty(_cdnUrl.Value)) { return; }
-            ContentRoute.CreatedVirtualPath += ContentRoute_CreatedVirtualPath;
+            context.Locate.Advanced.GetInstance<IContentRouteEvents>().CreatedVirtualPath += ContentRoute_CreatedVirtualPath;
         }
 
         public void Uninitialize(Framework.Initialization.InitializationEngine context)
