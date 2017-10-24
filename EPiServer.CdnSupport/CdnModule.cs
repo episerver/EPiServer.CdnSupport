@@ -49,7 +49,7 @@ namespace EPiServer.CdnSupport
             if (_mediaPaths.Any(p => newPath.StartsWith(p)))
             {
                 c.Items[CdnRequest] = c.Request.Path.Substring(1, 6);
-                c.RewritePath("/" + newPath, String.Empty, String.Empty, true);
+                c.RewritePath("/" + newPath, String.Empty, c.Request.QueryString.ToString(), true);
             }
         }
 
