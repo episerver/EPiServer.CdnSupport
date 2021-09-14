@@ -6,7 +6,7 @@ Example: Media URL /globalassets/alloy-track/alloytrack.png will be rewritten to
 the injected key is short form of the saved/published date ensuring the URL changes when the media changes. Requests where the injected
 key is outdated will be permanently redirected to an updated key for SEO reasons and to make sure bookmarks continue to work.
 
-Supports CMS 12+. Previous version can be found on the [CMS11 branch](tree/CMS11).
+Supports CMS 12+. Previous version can be found on the [CMS11 branch](/episerver/EPiServer.CdnSupport/tree/CMS11).
 
 ## Getting started
 
